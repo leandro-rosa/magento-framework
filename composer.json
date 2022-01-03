@@ -1,5 +1,5 @@
 {
-  "name": "onejobcode/framework",
+  "name": "leandro-rosa/framework",
   "version": "1.0.0",
   "description": "N/A",
   "type": "magento2-module",
@@ -14,7 +14,7 @@
       "registration.php"
     ],
     "psr-4": {
-      "OneJobCode\\Framework\\": ""
+      "LeandroRosa\\Framework\\": ""
     }
   }
 }

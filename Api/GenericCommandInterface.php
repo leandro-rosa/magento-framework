@@ -1,6 +1,6 @@
 <?php
 /**
- * OneJobCode
+ * LeandroRosa
  *
  * NOTICE OF LICENSE
  *
@@ -8,21 +8,21 @@
  *
  * Do not edit or add to this file if you wish to upgrade Magento to newer
  * versions in the future. If you wish to customize Magento for your
- * needs please refer to https://www.onejobcode.com for more information.
+ * needs please refer to https://github.com/leandro-rosa for more information.
  *
- * @category OneJobCode
+ * @category LeandroRosa
  *
- * @copyright Copyright (c) 2021 One Job Code (https://www.onejobcode.com)
+ * @copyright Copyright (c) 2021 Leandro Rosa (https://github.com/leandro-rosa)
  *
- * @author One Job Code <engineer@onejobcode.com>
+ * @author Leandro Rosa <dev.leandrorosa@gmail.com>
  */
 
-namespace OneJobCode\Framework\Api;
+namespace LeandroRosa\Framework\Api;
 
 /**
  * Interface GenericCommandInterface
  *
- * @package OneJobCode\Framework\Api
+ * @package LeandroRosa\Framework\Api
  */
 interface GenericCommandInterface
 {
