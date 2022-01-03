@@ -1,8 +1,14 @@
 {
     "name": "leandro-rosa/framework",
-    "description": "N/A",
+    "description": "Leandro Rosa Magento Framework",
     "type": "magento2-module",
     "minimum-stability": "dev",
+    "authors": [
+        {
+            "name": "Leandro Rosa",
+            "email": "dev.leandrorosa@gmail.com"
+        }
+    ],
     "require": {
     },
     "license": [
