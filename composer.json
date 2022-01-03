@@ -1,13 +1,12 @@
 {
   "name": "leandro-rosa/framework",
-  "version": "1.0.0",
   "description": "N/A",
   "type": "magento2-module",
   "require": {
-    "magento/framework": "*"
   },
   "license": [
-    "Proprietary"
+      "OSL-3.0",
+      "AFL-3.0"
   ],
   "autoload": {
     "files": [
