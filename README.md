@@ -9,4 +9,3 @@ ou seja, não tem nenhuma regra de negocio aqui, porém muitas coisas ficam mais
 * Gerenciamento de repositories
 * Gerenciamento de requisições SOAP
 * Algumas funções simples (helpers), como mascara, etc
-git st
