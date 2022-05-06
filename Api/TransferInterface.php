@@ -12,19 +12,13 @@
  *
  * @category LeandroRosa
  *
- * @copyright Copyright (c) 2021 Leandro Rosa (https://github.com/leandro-rosa)
+ * @copyright Copyright (c) 2022 Leandro Rosa (https://github.com/leandro-rosa)
  *
  * @author Leandro Rosa <dev.leandrorosa@gmail.com>
  */
-declare(strict_types=1);
 
 namespace LeandroRosa\Framework\Api;
 
-/**
- * Interface TransferInterface
- *
- * @package LeandroRosa\Framework\Api
- */
 interface TransferInterface
 {
     const METHOD = 'method';
@@ -36,68 +30,74 @@ interface TransferInterface
     const PASSWORD = 'password';
 
     /**
-     * @return string
+     * @return string|null
      */
-    public function getMethod();
+    public function getMethod(): ?string;
 
     /**
-     * @return string
+     * @return string|null
      */
-    public function getUri();
+    public function getUri(): ?string;
 
     /**
-     * @return array
+     * @return array|null
      */
-    public function getOptions();
+    public function getOptions(): ?array;
 
     /**
-     * @return array
+     * @return array|null
      */
-    public function getParams();
+    public function getParams(): ?array;
 
     /**
-     * @return string
+     * @return string|null
      */
-    public function getUsername();
+    public function getUsername(): ?string;
 
     /**
-     * @return string
+     * @return string|null
      */
-    public function getPassword();
-
-    /**
-     * @param string $value
-     * @return self
-     */
-    public function setMethod($value);
+    public function getPassword(): ?string;
 
     /**
      * @param string $value
+     *
      * @return self
      */
-    public function setUri($value);
+    public function setMethod(string $value): self;
+
+    /**
+     * @param string $value
+     *
+     * @return self
+     */
+    public function setUri(string $value): self;
 
     /**
      * @param array $value
+     *
      * @return self
      */
-    public function setOptions(array $value);
+    public function setOptions(array $value): self;
 
     /**
      * @param array $value
+     *
      * @return self
      */
-    public function setParams(array $value);
+    public function setParams(array $value): self;
 
     /**
      * @param string $value
+     *
      * @return self
      */
-    public function setUsername($value);
+    public function setUsername(string $value): self;
 
     /**
      * @param string $value
+     *
      * @return self
      */
-    public function setPassword($value);
+    public function setPassword(string $value): self;
 }

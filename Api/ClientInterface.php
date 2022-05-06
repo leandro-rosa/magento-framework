@@ -12,22 +12,25 @@
  *
  * @category LeandroRosa
  *
- * @copyright Copyright (c) 2021 Leandro Rosa (https://github.com/leandro-rosa)
+ * @copyright Copyright (c) 2022 Leandro Rosa (https://github.com/leandro-rosa)
  *
  * @author Leandro Rosa <dev.leandrorosa@gmail.com>
  */
+
 namespace LeandroRosa\Framework\Api;
 
-/**
- * Interface ClientInterface
- *
- * @package LeandroRosa\Framework\Api
- */
 interface ClientInterface
 {
     /**
      * @param TransferInterface $transfer
-     * @return Response $response
+     * @param GenericBuildInterface $responseBuild
+     * @param GenericCommandInterface|null $responseValidator
+     *
+     * @return mixed
      */
-    public function placeRequest(TransferInterface $transfer);
+    public function placeRequest(
+        TransferInterface $transfer,
+        GenericBuildInterface $responseBuild,
+        GenericCommandInterface $responseValidator = null
+    );
 }

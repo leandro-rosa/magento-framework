@@ -1,0 +1,17 @@
+/.buildpath
+/.cache
+/.metadata
+/.project
+/.settings
+/.vscode
+atlassian*
+/nbproject
+/.idea
+/.gitattributes
+/.php_cs
+/.php_cs.cache
+/.php-cs-fixer.php
+/.php-cs-fixer.cache
+/vendor/*
+!/vendor/.htaccess
+.DS_Store

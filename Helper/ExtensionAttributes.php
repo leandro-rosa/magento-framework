@@ -12,7 +12,7 @@
  *
  * @category LeandroRosa
  *
- * @copyright Copyright (c) 2021 Leandro Rosa (https://github.com/leandro-rosa)
+ * @copyright Copyright (c) 2022 Leandro Rosa (https://github.com/leandro-rosa)
  *
  * @author Leandro Rosa <dev.leandrorosa@gmail.com>
  */
@@ -24,11 +24,6 @@ use Magento\Framework\DataObject;
 use Magento\Framework\App\Helper\AbstractHelper;
 use Magento\Framework\Api\ExtensionAttributesInterface;
 
-/**
- * Class ExtensionAttributes
- *
- * @package LeandroRosa\Framework\Helper
- */
 class ExtensionAttributes extends AbstractHelper
 {
     /**
@@ -36,7 +31,7 @@ class ExtensionAttributes extends AbstractHelper
      *
      * @return array
      */
-    public function toArray(ExtensionAttributesInterface $extensionAttributes)
+    public function toArray(ExtensionAttributesInterface $extensionAttributes): array
     {
         $result = [];
         foreach ($extensionAttributes->__toArray() as $key => $value) {

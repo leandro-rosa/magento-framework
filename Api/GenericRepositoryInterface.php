@@ -12,47 +12,36 @@
  *
  * @category LeandroRosa
  *
- * @copyright Copyright (c) 2021 Leandro Rosa (https://github.com/leandro-rosa)
+ * @copyright Copyright (c) 2022 Leandro Rosa (https://github.com/leandro-rosa)
  *
  * @author Leandro Rosa <dev.leandrorosa@gmail.com>
  */
-declare(strict_types=1);
 
 namespace LeandroRosa\Framework\Api;
 
-use Magento\Framework\Api\Search\DocumentInterface;
 use Magento\Framework\Api\SearchCriteriaInterface;
+use Magento\Framework\Api\SearchResultsInterface;
 use Magento\Framework\Model\AbstractModel;
 
-/**
- * Interface GenericRepositoryInterface
- *
- * @package LeandroRosa\Framework\Api
- */
 interface GenericRepositoryInterface
 {
-    const COMMAND_GET           = 'get';
-    const COMMAND_SAVE          = 'save';
-    const COMMAND_GET_LIST      = 'getList';
-    const COMMAND_DELETE        = 'delete';
-
     /**
-     * @param AbstractModel $entity
+     * @param mixed $entity
      *
-     * @return AbstractModel
+     * @return mixed
      */
-    public function save(AbstractModel $entity): AbstractModel;
+    public function save(AbstractModel $entity);
 
     /**
-     * @param string|int $value
+     * @param string|int|mixed $value
      * @param null|string $field
      *
-     * @return AbstractModel
+     * @return mixed
      */
-    public function get($value, $field = null): AbstractModel;
+    public function get($value, $field = null);
 
     /**
-     * @param AbstractModel $entity
+     * @param mixed $entity
      *
      * @return bool
      */
@@ -75,7 +64,7 @@ interface GenericRepositoryInterface
     /**
      * @param SearchCriteriaInterface $criteria
      *
-     * @return DocumentInterface[]
+     * @return SearchResultsInterface
      */
-    public function getList(SearchCriteriaInterface $criteria): array;
+    public function getList(SearchCriteriaInterface $criteria): SearchResultsInterface;
 }

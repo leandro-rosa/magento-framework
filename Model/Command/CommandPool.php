@@ -12,24 +12,20 @@
  *
  * @category LeandroRosa
  *
- * @copyright Copyright (c) 2021 Leandro Rosa (https://github.com/leandro-rosa)
+ * @copyright Copyright (c) 2022 Leandro Rosa (https://github.com/leandro-rosa)
  *
  * @author Leandro Rosa <dev.leandrorosa@gmail.com>
  */
 declare(strict_types=1);
 
-namespace LeandroRosa\Framework\Command;
+namespace LeandroRosa\Framework\Model\Command;
 
-
-use Magento\Framework\Exception\NotFoundException;
 use LeandroRosa\Framework\Api\CommandPoolInterface;
 use LeandroRosa\Framework\Api\GenericCommandInterface;
+use Magento\Framework\Exception\NotFoundException;
 
-/**
- * Class CommandPool
- *
- * @package LeandroRosa\Framework\Command
- */
+use function __;
+
 class CommandPool extends AbstractPool implements CommandPoolInterface
 {
     /**

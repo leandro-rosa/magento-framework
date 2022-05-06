@@ -12,23 +12,18 @@
  *
  * @category LeandroRosa
  *
- * @copyright Copyright (c) 2021 Leandro Rosa (https://github.com/leandro-rosa)
+ * @copyright Copyright (c) 2022 Leandro Rosa (https://github.com/leandro-rosa)
  *
  * @author Leandro Rosa <dev.leandrorosa@gmail.com>
  */
-declare(strict_types=1);
 
 namespace LeandroRosa\Framework\Api;
 
-/**
- * Interface GenericBuildInterface
- *
- * @package LeandroRosa\Framework\Api
- */
 interface GenericBuildInterface
 {
     /**
      * @param array $subject
+     *
      * @return mixed
      */
     public function build(array $subject = []);

@@ -12,23 +12,17 @@
  *
  * @category LeandroRosa
  *
- * @copyright Copyright (c) 2021 Leandro Rosa (https://github.com/leandro-rosa)
+ * @copyright Copyright (c) 2022 Leandro Rosa (https://github.com/leandro-rosa)
  *
  * @author Leandro Rosa <dev.leandrorosa@gmail.com>
  */
 declare(strict_types=1);
 
-namespace LeandroRosa\Framework\Service;
-
+namespace LeandroRosa\Framework\Http;
 
 use Magento\Framework\DataObject;
 use LeandroRosa\Framework\Api\TransferInterface;
 
-/**
- * Class Transfer
- *
- * @package LeandroRosa\Framework\Service
- */
 class Transfer extends DataObject implements TransferInterface
 {
     /**

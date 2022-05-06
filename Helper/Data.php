@@ -12,7 +12,7 @@
  *
  * @category LeandroRosa
  *
- * @copyright Copyright (c) 2021 Leandro Rosa (https://github.com/leandro-rosa)
+ * @copyright Copyright (c) 2022 Leandro Rosa (https://github.com/leandro-rosa)
  *
  * @author Leandro Rosa <dev.leandrorosa@gmail.com>
  */
@@ -20,39 +20,31 @@ declare(strict_types=1);
 
 namespace LeandroRosa\Framework\Helper;
 
-
 use Magento\Framework\App\Helper\AbstractHelper;
 
-/**
- * Class Data
- *
- * @package LeandroRosa\Framework\Helper
- */
 class Data extends AbstractHelper
 {
     /**
-     * @param $val
+     * @param $value
      * @param $mask
      *
      * @return string
      */
-    public function mask($val, $mask)
+    public function mask($value, $mask): string
     {
-        $maskared = '';
+        $result = '';
         $k = 0;
         for ($i = 0; $i <= strlen($mask) - 1; ++$i) {
-            if ($mask[$i] == '#') {
-                if (isset($val[$k])) {
-                    $maskared .= $val[$k++];
-                }
+            if (isset($mask[$i]) && $mask[$i] === '#' && isset($value[$k])) {
+                $result .= $value[$k++];
                 continue;
             }
 
             if (isset($mask[$i])) {
-                $maskared .= $mask[$i];
+                $result .= $mask[$i];
             }
         }
 
-        return $maskared;
+        return $result;
     }
 }

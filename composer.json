@@ -10,7 +10,7 @@
         }
     ],
     "require": {
-        "php": ">=7.1"
+        "magento/framework": "*"
     },
     "license": [
         "OSL-3.0",

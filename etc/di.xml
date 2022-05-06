@@ -13,48 +13,16 @@
  *
  * @category LeandroRosa
  *
- * @copyright Copyright (c) 2021 Leandro Rosa (https://github.com/leandro-rosa)
+ * @copyright Copyright (c) 2022 Leandro Rosa (https://github.com/leandro-rosa)
  *
  * @author Leandro Rosa <dev.leandrorosa@gmail.com>
  */
 -->
-<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
-    <preference for="LeandroRosa\Framework\Api\CommandPoolInterface" type="LeandroRosa\Framework\Command\CommandPool" />
-
-    <preference for="LeandroRosa\Framework\Api\ClientInterface"
-                type="LeandroRosa\Framework\Service\Client\SoapClient" />
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <preference for="LeandroRosa\Framework\Api\CommandPoolInterface"
+                type="LeandroRosa\Framework\Model\Command\CommandPool"/>
 
     <preference for="LeandroRosa\Framework\Api\GenericCommandInterface"
-                type="LeandroRosa\Framework\Command\CommandFallBack" />
-
-    <virtualType name="Generic\Save" type="LeandroRosa\Framework\Model\ResourceModel\Entity\GenericSave">
-        <arguments>
-            <argument name="resource" xsi:type="object">ResourceModel</argument>
-        </arguments>
-    </virtualType>
-
-    <virtualType name="Generic\Delete" type="LeandroRosa\Framework\Model\ResourceModel\Entity\GenericDelete">
-        <arguments>
-            <argument name="resource" xsi:type="object">ResourceModel</argument>
-        </arguments>
-    </virtualType>
-
-    <virtualType name="Generic\CommandPool" type="LeandroRosa\Framework\Command\CommandPool">
-        <arguments>
-            <argument name="commands" xsi:type="array">
-                <item name="get" xsi:type="string">Generic\Get</item>
-                <item name="save" xsi:type="string">Generic\Save</item>
-                <item name="delete" xsi:type="string">Generic\Delete</item>
-                <item name="getList" xsi:type="string">Generic\GetList</item>
-            </argument>
-        </arguments>
-    </virtualType>
-
-    <type name="LeandroRosa\Framework\Model\GenericRepository">
-        <arguments>
-            <argument name="commandPool" xsi:type="object">Generic\CommandPool</argument>
-        </arguments>
-    </type>
-    <!-- END CONFIGURE REPOSITORY -->
-
+                type="LeandroRosa\Framework\Model\Command\CommandFallBack"/>
 </config>

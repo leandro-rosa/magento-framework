@@ -12,18 +12,13 @@
  *
  * @category LeandroRosa
  *
- * @copyright Copyright (c) 2021 Leandro Rosa (https://github.com/leandro-rosa)
+ * @copyright Copyright (c) 2022 Leandro Rosa (https://github.com/leandro-rosa)
  *
  * @author Leandro Rosa <dev.leandrorosa@gmail.com>
  */
 
 namespace LeandroRosa\Framework\Api;
 
-/**
- * Interface CommandPoolInterface
- *
- * @package LeandroRosa\Framework\Api
- */
 interface CommandPoolInterface
 {
     /**

@@ -12,29 +12,23 @@
  *
  * @category LeandroRosa
  *
- * @copyright Copyright (c) 2021 Leandro Rosa (https://github.com/leandro-rosa)
+ * @copyright Copyright (c) 2022 Leandro Rosa (https://github.com/leandro-rosa)
  *
  * @author Leandro Rosa <dev.leandrorosa@gmail.com>
  */
 declare(strict_types=1);
 
-namespace LeandroRosa\Framework\Command;
-
+namespace LeandroRosa\Framework\Model\Command;
 
 use Magento\Framework\ObjectManager\TMapFactory;
 use LeandroRosa\Framework\Api\GenericCommandInterface;
 
-/**
- * Class AbstractPool
- *
- * @package LeandroRosa\Framework\Command
- */
 abstract class AbstractPool
 {
     /**
      * @var array
      */
-    protected $commands;
+    protected $commands = [];
 
     /**
      * @var TMapFactory
@@ -55,13 +49,15 @@ abstract class AbstractPool
     ) {
         $this->tMapFactory = $tMapFactory;
         $this->commands = $commands;
-        $this->prepareCommands($type);
+        $this->init($type);
     }
 
     /**
      * @param string $type
+     *
+     * @return void
      */
-    protected function prepareCommands(string $type)
+    protected function init(string $type): void
     {
         $this->commands = $this->tMapFactory->create([
             'array' => $this->commands,

@@ -12,26 +12,22 @@
  *
  * @category LeandroRosa
  *
- * @copyright Copyright (c) 2021 Leandro Rosa (https://github.com/leandro-rosa)
+ * @copyright Copyright (c) 2022 Leandro Rosa (https://github.com/leandro-rosa)
  *
  * @author Leandro Rosa <dev.leandrorosa@gmail.com>
  */
 declare(strict_types=1);
 
-namespace LeandroRosa\Framework\Command;
-
+namespace LeandroRosa\Framework\Model\Command;
 
 use LeandroRosa\Framework\Api\GenericCommandInterface;
 
-/**
- * Class CommandFallBack
- *
- * @package LeandroRosa\Framework\Command
- */
 class CommandFallBack implements GenericCommandInterface
 {
     /**
      * @inheritDoc
+     *
+     * @retrurn array
      */
     public function execute(array $subject = [])
     {

@@ -12,29 +12,23 @@
  *
  * @category LeandroRosa
  *
- * @copyright Copyright (c) 2021 Leandro Rosa (https://github.com/leandro-rosa)
+ * @copyright Copyright (c) 2022 Leandro Rosa (https://github.com/leandro-rosa)
  *
  * @author Leandro Rosa <dev.leandrorosa@gmail.com>
  */
 declare(strict_types=1);
 
-namespace LeandroRosa\Framework\Service\Client;
+namespace LeandroRosa\Framework\Http\Client;
 
-
+use Psr\Log\LoggerInterface;
+use Laminas\Soap\ClientFactory;
+use Laminas\Soap\Client;
 use LeandroRosa\Framework\Api\ClientInterface;
 use LeandroRosa\Framework\Api\GenericBuildInterface;
 use LeandroRosa\Framework\Api\GenericCommandInterface;
 use LeandroRosa\Framework\Api\TransferInterface;
-use Psr\Log\LoggerInterface;
-use Laminas\Soap\ClientFactory;
-use Laminas\Soap\Client;
 
-/**
- * Class SoapClient
- *
- * @package LeandroRosa\Framework\Service\Client
- */
-class SoapClient implements ClientInterface
+class Soap implements ClientInterface
 {
     /**
      * @var ClientFactory
@@ -47,61 +41,48 @@ class SoapClient implements ClientInterface
     protected $logger;
 
     /**
-     * @var GenericBuildInterface
-     */
-    protected $responseBuild;
-
-    /**
-     * @var GenericCommandInterface
-     */
-    protected $responseValidator;
-
-    /**
-     * SoapClient constructor.
+     * Soap constructor.
      *
      * @param ClientFactory $clientFactory
      * @param LoggerInterface $logger
-     * @param GenericBuildInterface $responseBuild
-     * @param GenericCommandInterface $responseValidator
      */
     public function __construct(
         ClientFactory $clientFactory,
-        LoggerInterface $logger,
-        GenericBuildInterface $responseBuild,
-        GenericCommandInterface $responseValidator
+        LoggerInterface $logger
     ) {
         $this->clientFactory = $clientFactory;
         $this->logger = $logger;
-        $this->responseBuild = $responseBuild;
-        $this->responseValidator = $responseValidator;
     }
 
     /**
-     * @inheritDoc
+     * @inheirtDoc
      */
-    public function placeRequest(TransferInterface $transfer)
-    {
+    public function placeRequest(
+        TransferInterface $transfer,
+        GenericBuildInterface $responseBuild,
+        GenericCommandInterface $responseValidator = null
+    ) {
         /** @var Client $client */
         $client = $this->clientFactory->create();
-
         $options = $transfer->getOptions() ?? [];
-        $options['connection_timeout'] = 2;
-
-        $client->setWSDL($transfer->getUri())
-            ->setOptions($options);
+        $client->setWSDL($transfer->getUri())->setOptions($options);
 
         $response = $client->call($transfer->getMethod(), $transfer->getParams());
-
-        $this->responseValidator->execute(['response' => $response]);
         $this->logRequestResponse($client);
 
-        return $this->responseBuild->build(['response' => $response, 'transfer' => $transfer]);
+        if ($responseValidator) {
+            $responseValidator->execute(['response' => $response]);
+        }
+
+        return $responseBuild->build(['response' => $response, 'transfer' => $transfer]);
     }
 
     /**
-     * @codeCoverageIgnore
+     * @param Client $client
+     *
+     * @return void
      */
-    protected function logRequestResponse(Client $client)
+    protected function logRequestResponse(Client $client): void
     {
         $this->logger->debug("/// BEGIN REQUEST ///");
         $requestStr = $client->getLastRequest();

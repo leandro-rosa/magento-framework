@@ -13,14 +13,14 @@
  *
  * @category LeandroRosa
  *
- * @copyright Copyright (c) 2021 Leandro Rosa (https://github.com/leandro-rosa)
+ * @copyright Copyright (c) 2022 Leandro Rosa (https://github.com/leandro-rosa)
  *
  * @author Leandro Rosa <dev.leandrorosa@gmail.com>
  */
 -->
 <config>
     <system>
-        <tab id="leandro-rosa" translate="label" sortOrder="10">
+        <tab id="leandrorosa" translate="label" sortOrder="12">
             <label>LeandroRosa</label>
         </tab>
     </system>
