@@ -32,72 +32,72 @@ interface TransferInterface
     /**
      * @return string|null
      */
-    public function getMethod(): ?string;
+    public function getMethod();
 
     /**
      * @return string|null
      */
-    public function getUri(): ?string;
+    public function getUri();
 
     /**
      * @return array|null
      */
-    public function getOptions(): ?array;
+    public function getOptions();
 
     /**
      * @return array|null
      */
-    public function getParams(): ?array;
+    public function getParams();
 
     /**
      * @return string|null
      */
-    public function getUsername(): ?string;
+    public function getUsername();
 
     /**
      * @return string|null
      */
-    public function getPassword(): ?string;
+    public function getPassword();
 
     /**
      * @param string $value
      *
      * @return self
      */
-    public function setMethod(string $value): self;
+    public function setMethod($value);
 
     /**
      * @param string $value
      *
      * @return self
      */
-    public function setUri(string $value): self;
+    public function setUri($value);
 
     /**
      * @param array $value
      *
      * @return self
      */
-    public function setOptions(array $value): self;
+    public function setOptions(array $value);
 
     /**
      * @param array $value
      *
      * @return self
      */
-    public function setParams(array $value): self;
+    public function setParams(array $value);
 
     /**
      * @param string $value
      *
      * @return self
      */
-    public function setUsername(string $value): self;
+    public function setUsername($value);
 
     /**
      * @param string $value
      *
      * @return self
      */
-    public function setPassword(string $value): self;
+    public function setPassword($value);
 }
